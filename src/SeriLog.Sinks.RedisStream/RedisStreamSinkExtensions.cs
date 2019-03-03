@@ -10,7 +10,7 @@ namespace SeriLog.Sinks.RedisStream
 {
     public static class RedisStreamSinkExtensions
     {
-       private const string DefaultOutputTemplate ="[{Timestamp:HH:mm:ss.fff} {Level:u3}] {Message:lj}{NewLine}{Exception}";
+       private const string DefaultOutputTemplate ="[{Timestamp:yyyy-MM-dd HH:mm:ss.fff} {Level:u3}] {Message:lj}{NewLine}{Exception}";
 
         public static LoggerConfiguration RedisStreamSink(
             this LoggerSinkConfiguration loggerConfiguration,
