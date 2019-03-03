@@ -17,7 +17,7 @@ namespace SeriLog.Sinks.RedisStream.Example
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .Enrich.WithProperty("Version", "0.9.1")
-                .WriteTo.RedisStreamSink(config, "{Timestamp:HH:mm} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}")
+                .WriteTo.RedisStreamSink(config)
                 .CreateLogger();
 
             Log.Information("Completed log test to Redis Streams.");
