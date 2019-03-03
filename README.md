@@ -13,7 +13,7 @@ Redis 5.0 introduced [Redis Streams](https://redis.io/topics/streams-intro), an 
 
 This readme will provide detail on the how the sink should be leveraged to communicate with Redis Streams.
 
-TO COME: WILL BE Available on [Nuget](https://www.nuget.org/packages/Serilog.Sinks.RedisStream/).
+Available on [Nuget](https://www.nuget.org/packages/Serilog.Sinks.RedisStream/).
 
 ### Prerequisites
 
