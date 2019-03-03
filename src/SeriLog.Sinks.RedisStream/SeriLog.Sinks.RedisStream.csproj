@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="serilog" Version="2.8.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.545" />
+  </ItemGroup>
+
+</Project>
