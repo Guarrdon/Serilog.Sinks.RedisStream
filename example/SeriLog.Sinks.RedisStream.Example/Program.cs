@@ -14,7 +14,7 @@ namespace SeriLog.Sinks.RedisStream.Example
 
             var config = new RedisStreamSinkConfiguration
             {
-                RedisConnectionString = "10.10.1.99:32769",
+                RedisConnectionString = "redis:6379",
                 RedisStreamName = "ExampleApp"
             };
             Console.WriteLine("Logging configuration set.");
@@ -22,7 +22,7 @@ namespace SeriLog.Sinks.RedisStream.Example
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
-                .Enrich.WithProperty("Version", "0.9.1")
+                .Enrich.WithProperty("Version", "1.0.0")
                 .WriteTo.RedisStreamSink(config)
                 .CreateLogger();
             Console.WriteLine("Logger created.");

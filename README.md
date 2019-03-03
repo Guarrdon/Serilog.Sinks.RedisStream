@@ -56,42 +56,40 @@ The sink configuration leverages three primary settings.
 
 ## Execution
 
-TODO...need to create and deploy DockerFile and docker-compose files.
+Docker configuration files are located at the root of the solution.
 
-~~Docker configuration files are located at the root of the solution.~~
-
-~~The Dockerfile creates a Docker serilog-sinks-redisstream-example image locally.  Use the following command to build the image.~~
+The Dockerfile creates a Docker serilog-sinks-redisstream-example image locally.  Use the following command to build the image.
 
 ```
-~~docker build -t serilog-sinks-redisstream-example .~~
+docker build -t serilog-sinks-redisstream-example .
 ```
 
-~~Utilize the Docker Compose command to initialize the environment with a Redis instance along side the .NetCore example application.  Configurations for Docker Compose are found in the docker-compose.yml.  The configuration requires the previously built serilog-sinks-redisstream-example image.~~
+Utilize the Docker Compose command to initialize the environment with a Redis instance along side the .NetCore example application.  Configurations for Docker Compose are found in the docker-compose.yml.  The configuration requires the previously built serilog-sinks-redisstream-example image.
 
 ```
-~~docker-compose up~~~~
+docker-compose up
 ```
 
-After some initial Redis startup logging, the following should be seen in the Docker console.~~
+After some initial Redis startup logging, the following should be seen in the Docker console.
 
-~~*console_1  | Serilog configuration loaded.*~~
-~~*console_1  | Default logger created.*~~
-~~*console_1  | Log attempted.*~~
-~~*console_1  | Redis Stream log example finished.*~~
-~~*serilogredisstream_console_1 exited with code 0*~~
+console_1  | Logging configuration set.
+console_1  | {"RedisConnectionString":"redis:6379","RedisStreamName":"ExampleApp","RedisStreamMessageField":"message"}
+console_1  | Logger created.
+console_1  | Log entry written.
+serilogsinksredisstream_console_1 exited with code 0
 
 If Serilog is correctly configured, the standard logger should automatically forward to the Redis Stream instance.
 You can test that the number of entries has incremented by using the following command from the Redis cli command:
 
 ```
-xlen ExampleAppStream
+xlen ExampleApp
 ```
 *Note the stream name comes from the configuration*
 
 Or review the values with the following command (note this brings back **ALL** of stream entries):
 
 ```
-xrange ExampleAppStream - +
+xrange ExampleApp - +
 ```
 
 See the [Redis Streams documentation](https://redis.io/topics/streams-intro) for more information.
@@ -109,8 +107,6 @@ docker-compose down
 
 
 ## Running the tests
-
-TODO: add tests
 
 The tests are [XUnit](https://xunit.github.io/) unit tests.
 You can execute the tests, with code coverage analysis, by running from the root folder:
