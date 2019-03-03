@@ -1,0 +1,91 @@
+SF:/Users/mattlyons/Desktop/Development2/Guarrdon/SeriLog.Sinks.RedisStream/src/SeriLog.Sinks.RedisStream/RedisStreamSink.cs
+FN:17,StackExchange.Redis.ConnectionMultiplexer SeriLog.Sinks.RedisStream.RedisStreamSink::get_RedisConnection()
+FNDA:0,StackExchange.Redis.ConnectionMultiplexer SeriLog.Sinks.RedisStream.RedisStreamSink::get_RedisConnection()
+DA:18,0
+FN:26,StackExchange.Redis.IConnectionMultiplexer SeriLog.Sinks.RedisStream.RedisStreamSink::ConnectToRedis()
+FNDA:3,StackExchange.Redis.IConnectionMultiplexer SeriLog.Sinks.RedisStream.RedisStreamSink::ConnectToRedis()
+DA:27,3
+DA:28,3
+DA:29,1
+DA:31,2
+DA:32,2
+DA:34,0
+DA:35,0
+DA:37,0
+DA:38,0
+BRDA:28,12,0,1
+BRDA:28,12,1,2
+BRDA:31,43,0,2
+BRDA:31,43,1,0
+BRDA:34,67,0,0
+BRDA:34,67,1,0
+FN:19,System.Void SeriLog.Sinks.RedisStream.RedisStreamSink::.ctor(SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration,Serilog.Formatting.ITextFormatter)
+FNDA:4,System.Void SeriLog.Sinks.RedisStream.RedisStreamSink::.ctor(SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration,Serilog.Formatting.ITextFormatter)
+DA:20,4
+DA:21,4
+DA:22,4
+DA:23,4
+DA:24,4
+FN:41,System.Void SeriLog.Sinks.RedisStream.RedisStreamSink/<Emit>d__8::MoveNext()
+FNDA:1,System.Void SeriLog.Sinks.RedisStream.RedisStreamSink/<Emit>d__8::MoveNext()
+DA:42,1
+DA:45,1
+DA:46,0
+DA:49,1
+DA:50,1
+DA:52,1
+DA:54,1
+DA:56,1
+DA:57,1
+DA:58,1
+DA:59,1
+DA:60,1
+DA:63,1
+DA:66,1
+DA:67,0
+DA:68,1
+DA:70,1
+BRDA:45,36,0,1
+BRDA:45,64,1,1
+BRDA:49,96,0,1
+BRDA:63,323,1,1
+BRDA:66,446,0,1
+BRDA:66,474,1,1
+LF:32
+LH:25
+BRF:12
+BRH:9
+FNF:4
+FNH:3
+end_of_record
+SF:/Users/mattlyons/Desktop/Development2/Guarrdon/SeriLog.Sinks.RedisStream/src/SeriLog.Sinks.RedisStream/RedisStreamSinkConfiguration.cs
+FN:8,System.String SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration::get_RedisConnectionString()
+FNDA:9,System.String SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration::get_RedisConnectionString()
+DA:9,9
+FN:9,System.String SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration::get_RedisStreamName()
+FNDA:6,System.String SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration::get_RedisStreamName()
+DA:10,6
+FN:10,System.String SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration::get_RedisStreamMessageField()
+FNDA:10,System.String SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration::get_RedisStreamMessageField()
+DA:11,10
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:/Users/mattlyons/Desktop/Development2/Guarrdon/SeriLog.Sinks.RedisStream/src/SeriLog.Sinks.RedisStream/RedisStreamSinkExtensions.cs
+FN:19,Serilog.LoggerConfiguration SeriLog.Sinks.RedisStream.RedisStreamSinkExtensions::RedisStreamSink(Serilog.Configuration.LoggerSinkConfiguration,SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration,System.String,System.IFormatProvider)
+FNDA:0,Serilog.LoggerConfiguration SeriLog.Sinks.RedisStream.RedisStreamSinkExtensions::RedisStreamSink(Serilog.Configuration.LoggerSinkConfiguration,SeriLog.Sinks.RedisStream.RedisStreamSinkConfiguration,System.String,System.IFormatProvider)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record

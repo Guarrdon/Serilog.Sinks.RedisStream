@@ -14,7 +14,7 @@ namespace SeriLog.Sinks.RedisStream
 
         private readonly ITextFormatter _formatter;
         private readonly RedisStreamSinkConfiguration _configuration;
-        
+
         protected ConnectionMultiplexer RedisConnection { get; set; }
 
         public RedisStreamSink(RedisStreamSinkConfiguration config, ITextFormatter textFormatter)
@@ -25,8 +25,11 @@ namespace SeriLog.Sinks.RedisStream
 
         public virtual IConnectionMultiplexer ConnectToRedis()
         {
+            if (_configuration==null)
+                throw new NullReferenceException("Serilog configuration for logger must be configured.  Currently null.");
+
             if (string.IsNullOrEmpty(_configuration.RedisConnectionString))
-                throw new InvalidOperationException("Connection string required to connect to Redis");
+                throw new NullReferenceException("Connection string required to connect to Redis");
 
             if (RedisConnection == null)
                 RedisConnection = ConnectionMultiplexer.Connect(_configuration.RedisConnectionString);

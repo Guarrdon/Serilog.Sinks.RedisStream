@@ -112,11 +112,11 @@ docker-compose down
 
 TODO: add tests
 
-~~The tests are [XUnit](https://xunit.github.io/) unit tests.~~
-~~You can execute the tests, with code coverage analysis, by running:~~
+The tests are [XUnit](https://xunit.github.io/) unit tests.
+You can execute the tests, with code coverage analysis, by running from the root folder:
 
 ```
-~~dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./lcov.info /p:Exclude=[xunit.*]*~~
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./lcov.info /p:Exclude=[xunit.*]*
 ```
 
 
