@@ -43,7 +43,7 @@ The Serilog configuration is code first configuration as seen below.
 The default template for the log message that is written to the Redis Streams is below.  It can be changed by overriding the outTemplate input parameter for the Serilog extension.
 
 ```
-{Timestamp:HH:mm} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}
+[{Timestamp:yyyy-MM-dd HH:mm:ss.fff} {Level:u3}] {Message:lj}{NewLine}{Exception}
 ```
 
 The sink configuration leverages three primary settings.
