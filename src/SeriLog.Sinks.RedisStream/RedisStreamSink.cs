@@ -25,7 +25,7 @@ namespace SeriLog.Sinks.RedisStream
 
         public virtual IConnectionMultiplexer ConnectToRedis()
         {
-            if (_configuration==null)
+            if (_configuration == null)
                 throw new NullReferenceException("Serilog configuration for logger must be configured.  Currently null.");
 
             if (string.IsNullOrEmpty(_configuration.RedisConnectionString))
@@ -46,26 +46,27 @@ namespace SeriLog.Sinks.RedisStream
                 throw new InvalidOperationException("RedisConnectionString and RedisStreamName configuration elements are required.");
 
             //connect to Redis
-            using (var connection = ConnectToRedis())
-            {
+            // removed using clause to avoid inadvertant closing of the log IMultiplex object
+            var connection = ConnectToRedis();
+
                 //get Redis database
-                var db = connection.GetDatabase();
+            var db = connection.GetDatabase();
 
-                string message = default(string);
-                //format message per formatProvider
-                using (var writer = new StringWriter())
-                {
-                    _formatter.Format(logEvent, writer);
-                    message = writer.ToString();
-                }
-
-                //add log message to stream
-                var messageId = await db.StreamAddAsync(_configuration.RedisStreamName, _configuration.RedisStreamMessageField, message, null, null, false, CommandFlags.None);
-
-                //check for message failure
-                if (messageId == RedisValue.Null || ((string)messageId).Length == 0)
-                    throw new RedisException("The message failed to log to a Redis Stream.  Return message was either null or empty.");
+            string message = default(string);
+            //format message per formatProvider
+            using (var writer = new StringWriter())
+            {
+                _formatter.Format(logEvent, writer);
+                message = writer.ToString();
             }
+
+            //add log message to stream
+            var messageId = await db.StreamAddAsync(_configuration.RedisStreamName, _configuration.RedisStreamMessageField, message, null, null, false, CommandFlags.None);
+
+            //check for message failure
+            if (messageId == RedisValue.Null || ((string)messageId).Length == 0)
+                throw new RedisException("The message failed to log to a Redis Stream.  Return message was either null or empty.");
+
 
         }
     }

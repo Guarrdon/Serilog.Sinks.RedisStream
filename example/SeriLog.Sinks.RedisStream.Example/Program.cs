@@ -27,8 +27,17 @@ namespace SeriLog.Sinks.RedisStream.Example
                 .CreateLogger();
             Console.WriteLine("Logger created.");
 
-            Log.Information("Completed log test to Redis Streams.");
-            Console.WriteLine("Log entry written.");
+            try
+            {
+                Log.Information("Completed log test to Redis Streams.");
+                Console.WriteLine("Log entry written.");
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("failed to log");
+                Console.WriteLine(ex);
+            }
         }
     }
 }
